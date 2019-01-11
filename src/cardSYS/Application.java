@@ -9,7 +9,7 @@ public class Application {
 		
 		try {
 			AppView av = new AppView();
-			av.mainView();
+			av.mainProcess();
 		}catch(Exception ex) {
 			throw ex;
 		}
