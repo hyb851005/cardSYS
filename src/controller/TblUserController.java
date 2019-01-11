@@ -1,9 +1,39 @@
 package controller;
 
+import java.util.List;
+
 import dao.TblUserDao;
+import modal.TblUser;
 
 public class TblUserController {
 //	专门做用户管理的业务逻辑处理
+	
+	public TblUser login(String loginName, String passWord) throws Exception {
+		TblUser tUser = new TblUser();
+		
+		TblUserDao tUserDao = new TblUserDao();
+		try {
+			List<TblUser> userList = tUserDao.getList4Login(loginName, passWord);
+			int ucnt = userList.size();
+			if(ucnt < 1) {
+				tUser.setuId(null);
+				return tUser;
+			}
+			
+			if(ucnt > 1 ) {
+				tUser.setuId("");
+				return tUser;
+			}
+			
+			for(TblUser u : userList){
+				tUser = u;
+			}
+		}catch(Exception ex) {
+			throw new Exception(ex.getMessage());
+		}
+		
+		return tUser;
+	}
 	
 	public void deleteUser() {
 		
