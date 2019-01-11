@@ -6,7 +6,7 @@ import dao.TblUserDao;
 import modal.TblUser;
 
 public class TblUserController {
-//	专门做用户管理的业务逻辑处理
+//	专门做用户管理的业务逻辑处理000
 	
 	public TblUser login(String loginName, String passWord) throws Exception {
 		TblUser tUser = new TblUser();
