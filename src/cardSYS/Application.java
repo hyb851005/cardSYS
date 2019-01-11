@@ -2,7 +2,7 @@ package cardSYS;
 
 import view.AppView;
 
-
+    
 
 public class Application {
 
