@@ -30,7 +30,6 @@ public class AppView {
 		        if(tUser.getuId() != null && tUser.getuId() != "") {
 		        	System.out.println("logined succeeded!");
 		        	this.mainView();
-		        	
 		        }
 		    }catch(Exception ex) {
 		    	throw ex;

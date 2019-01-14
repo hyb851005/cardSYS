@@ -9,23 +9,32 @@ import java.util.List;
 
 import modal.TblUser;
 
-public class TblUserDao {
+public class TblUserDao extends BaseDao {
 	
 //	create by huyibo 20190101
 	public List<TblUser> getList4Login(String loginName, String passWord) throws Exception{
 		List<TblUser> userList = new ArrayList<TblUser>();
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://39.98.183.155:3306/atm", "root", "root");
-			if(!con.isClosed()) {
-				System.out.println("db con ok");
-			}
-			Statement stmt = con.createStatement();
+//			方法一
+//			Class.forName("com.mysql.jdbc.Driver");
+//			Connection con = DriverManager.getConnection("jdbc:mysql://39.98.183.155:3306/atm", "root", "root");
+//			if(!con.isClosed()) {
+//				System.out.println("db con ok");
+//			}
+//			Statement stmt = con.createStatement();
+			
+//			方法二
+//			BaseDao bDao = new BaseDao();
+//			Statement stmt = bDao.getSTMT();
+			
+//			方法三
+			_getSTMT4extend();
+			
 			
 			String sqlStr = "select *from tbl_user where user_name='"+loginName+"' and user_password = '"+passWord+"';";
 			System.out.println(sqlStr);
-			ResultSet rs = stmt.executeQuery(sqlStr);
+			ResultSet rs = _stmt.executeQuery(sqlStr);
 			
 			while(rs.next()) {
 				TblUser tUser = new TblUser();
