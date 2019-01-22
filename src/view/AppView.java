@@ -15,6 +15,9 @@ public class AppView {
 	    Scanner sc = new Scanner(System.in);
 	    
 	    	System.out.println("**********欢迎使用XXX银行ATM系统**************");
+	    	
+	    	
+	    	
 	    	System.out.println("请输入您的登录账号：例如用户名/银行卡号/银行账号/身份证号");
 	    	String loginName = sc.nextLine();
 	    	sc.reset();
@@ -36,8 +39,10 @@ public class AppView {
 		    }
 	}
 	
-	public void mainView() {
+	public void mainView() throws Exception {
 		System.out.println("请输入");
+		TblAccountView tblAccountView=new TblAccountView();
+		tblAccountView.select();
 	}
 
 }

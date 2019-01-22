@@ -27,7 +27,6 @@ public class TblAccount {
 	    private Date openAccountAuditTime;
 	    
 	    
-	   
 	    public Date getCancelAccountAuditTime() {
 			return cancelAccountAuditTime;
 		}
@@ -98,6 +97,7 @@ public class TblAccount {
 			return openAccountAuditPerson;
 		}
 		public void setOpenAccountAuditPerson(String openAccountAuditPerson) {
+			
 			this.openAccountAuditPerson = openAccountAuditPerson;
 		}
 		
@@ -132,7 +132,7 @@ public class TblAccount {
         	
         	return this.createUser;
         }
-         public void setAccountNo(String accountNo) {
+         public void setAccountNo(String acountNo) {
         	 
         	 this.accountNo=accountNo;
  	
@@ -140,7 +140,7 @@ public class TblAccount {
          public String getAccountNo() {
         	 
         	 
-			return this.accountName;
+			return this.accountNo;
         	 
         	 
          }
