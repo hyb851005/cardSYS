@@ -15,13 +15,8 @@ public class TblUserController {
 		try {
 			List<TblUser> userList = tUserDao.getList4Login(loginName, passWord);
 			int ucnt = userList.size();
-			if(ucnt < 1) {
+			if(ucnt != 1) {
 				tUser.setuId(null);
-				return tUser;
-			}
-			
-			if(ucnt > 1 ) {
-				tUser.setuId("");
 				return tUser;
 			}
 			

@@ -9,13 +9,13 @@ public class BaseDao {
 	public Statement _stmt;
 	
 //	获取数据库执行对象
-	public void _getSTMT4extend() throws Exception {
+	public void getSTMT4extend() throws Exception {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://39.98.183.155:3306/atm", "root", "root");
 			if(!con.isClosed()) {
-				System.out.println("数据库已经连接！");
+//				System.out.println("数据库已经连接！");
 			}
 			
 		    this._stmt = con.createStatement();

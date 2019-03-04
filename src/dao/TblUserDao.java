@@ -15,25 +15,11 @@ public class TblUserDao extends BaseDao {
 	public List<TblUser> getList4Login(String loginName, String passWord) throws Exception{
 		List<TblUser> userList = new ArrayList<TblUser>();
 		
-		try {
-//			方法一
-//			Class.forName("com.mysql.jdbc.Driver");
-//			Connection con = DriverManager.getConnection("jdbc:mysql://39.98.183.155:3306/atm", "root", "root");
-//			if(!con.isClosed()) {
-//				System.out.println("db con ok");
-//			}
-//			Statement stmt = con.createStatement();
-			
-//			方法二
-//			BaseDao bDao = new BaseDao();
-//			Statement stmt = bDao.getSTMT();
-			
-//			方法三
-			_getSTMT4extend();
-			
+		try {		
+			super.getSTMT4extend();
 			
 			String sqlStr = "select *from tbl_user where user_name='"+loginName+"' and user_password = '"+passWord+"';";
-			System.out.println(sqlStr);
+//			System.out.println(sqlStr);
 			ResultSet rs = _stmt.executeQuery(sqlStr);
 			
 			while(rs.next()) {
@@ -49,7 +35,7 @@ public class TblUserDao extends BaseDao {
 				userList.add(tUser);
 			}
 			
-			System.out.println("db con ok>>>>");
+//			System.out.println("db con ok>>>>");
 		}catch(Exception e) {
 			throw new Exception(e.getMessage());
 		}
